@@ -1,0 +1,163 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "demo eskil",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "HelloWorldIntent",
+          "slots": [],
+          "samples": [
+            "hola",
+            "como estás",
+            "di hola mundo",
+            "di hola",
+            "hola mundo"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "RevenueIntent",
+          "slots": [
+            {
+              "name": "TimeFrame",
+              "type": "AMAZON.DATE",
+              "samples": [
+                "de {TimeFrame}",
+                "{TimeFrame}"
+              ]
+            }
+          ],
+          "samples": [
+            "cuánto vendimos",
+            "cuál fué la venta de {TimeFrame}",
+            "cuánto vendimos el {TimeFrame}",
+            "cuánto vendimos en {TimeFrame}",
+            "cual es la venta de {TimeFrame}"
+          ]
+        },
+        {
+          "name": "AverageRevenueIntent",
+          "slots": [
+            {
+              "name": "TimeFrame",
+              "type": "AMAZON.DATE",
+              "samples": [
+                "{TimeFrame}"
+              ]
+            }
+          ],
+          "samples": [
+            "cuál fue el promedio de venta",
+            "cuál fue el promedio de venta de {TimeFrame}",
+            "cual es el promedio de venta de {TimeFrame}",
+            "cuál fué la venta promedio de {TimeFrame}"
+          ]
+        },
+        {
+          "name": "SumRevenueIntent",
+          "slots": [],
+          "samples": [
+            "Cual fue el total de venta de Marzo"
+          ]
+        },
+        {
+          "name": "ordersIntent",
+          "slots": [],
+          "samples": [
+            "cuantas servicios tenemos el día de hoy",
+            "cuántas ordenes tenemos"
+          ]
+        },
+        {
+          "name": "PosIntent",
+          "slots": [],
+          "samples": [
+            "Cuantas entregas llevamos el día de hoy",
+            "Cuantas entregas llevamos hoy"
+          ]
+        },
+        {
+          "name": "TimeIntent",
+          "slots": [],
+          "samples": [
+            "cuánto tarda la implementación de esta aplicación"
+          ]
+        }
+      ],
+      "types": []
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "RevenueIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "TimeFrame",
+              "type": "AMAZON.DATE",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.829559363525.1417540225671"
+              }
+            }
+          ]
+        },
+        {
+          "name": "AverageRevenueIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "TimeFrame",
+              "type": "AMAZON.DATE",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.742775115030.825874033205"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.829559363525.1417540225671",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "de cuando te gustaría conocer, la semana pasada, de marzo o el seis de abril?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.742775115030.825874033205",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "de cuando te gustaría conocer, hoy, ayer o de cuando?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "12"
+}
